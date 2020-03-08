@@ -1,52 +1,43 @@
-import java.util.Scanner;
-
+ //CALCULO DE PREÇO, SEGUNDO A FORMA DE PAGAMENTO.
+ 
+ import java.util.Scanner;
+ 
  class Main {
 
-	 //public static double IMC (double Aprovado, double Reprovado) {
-		//	return (nota1 + nota2 * 2 + nota3 * 3 + ME)/7*10
-	 //}
-	 
 	public static void main(String[] args) {
-		
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Informe o numero de identificacao do aluno:  ");
-		int i = sc.nextInt();
-		
-		System.out.println("Informe a nota 1: ");
-		double nota1 = sc.nextDouble();
-		
-		System.out.println("Informe a nota 2: ");
-		double nota2 = sc.nextDouble();
-		
-		System.out.println("Informe a nota 3: ");
-		double nota3 = sc.nextDouble();
-	
-		System.out.println("Informe a media dos exercicios: ");
-		double ME = sc.nextDouble();
-		
-	
-		double MA = (nota1 + (nota2 * 2) + (nota3 *3) + ME)/7*10;
-		
-	
-		if (MA >= 90 ) {
-			System.out.println("Aluno: " + i + ", Media Aproveitamento = " + MA + ", Conceito: A, Aprovado");
-		} 
-		else if (MA >= 75) {
-			System.out.println("Aluno: " + i + ", Media Aproveitamento = " + MA + ", Conceito: B, Aprovado");
-		}	
-		else if (MA >= 60) {
-			System.out.println("Aluno: " + i + ", Media Aproveitamento = " + MA + ", Conceito: C, Aprovado");      
-		}
-		else if (MA >= 40   ) {
-			System.out.println("Aluno: " + i + ", Media Aproveitamento = " + MA + ", Conceito: D, Reprovado");
-		}
-		else if (MA < 40) {	
-			System.out.println("Aluno: " + i + ", Media Aproveitamento = " + MA + ", Conceito: E, Reprovado");
-		}
-		   	   
+	 Scanner sc = new Scanner(System.in);	
+
+	 	System.out.println("Informe o preco de etiqueta: ");
+	 	double eti = sc.nextDouble();
+	 	
+	 	System.out.println("Informe a forma de pagamento: ");
+	 	int form = sc.nextInt();
+	 	
+	 
+	 	
+	 	if( form == 1 ) {
+	 		System.out.println("1: A vista em dinheiro ou cheque, recebe 10% de desconto");
+	 		double vlf = eti - (10.0/100.0)*eti;
+	 		
+	 		System.out.println("Valor final: " + vlf);
+	 		
+	 	}else if(form == 2) {
+	 		System.out.println("2: A vista no cartao de credito, recebe 15% de desconto");
+	 		double vl2 = eti - (15.0/100.0)*eti;
+	 		System.out.println("Valor final: " + vl2);
+	 		
+	 	}else if(form == 3) {
+	 		System.out.println("3: Em duas vezes, preco normal de etiqueta sem juros");
+	 		System.out.println("Valor final: " + eti);
+	 	}else if(form == 4) {
+	 		System.out.println("4: Em duas vezes, preco normal de etiqueta mais juros de 10%");
+	 		double vf4 = eti + (10.0/100.0)* eti;
+	 		System.out.println("Valor final: " + vf4);
+	 	}else if( form > 4) {
+	 		System.out.println("Opcao invalida!");
+	 	}
+	 	
+	 	sc.close();
 	}
-		
-			
+
 }
-		
-			
