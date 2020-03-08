@@ -1,0 +1,26 @@
+\\Media da turma com Do While
+
+import java.util.Scanner;
+class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner (System.in);
+		
+		System.out.println("Digite a quantidade de notas a serem lidas:");
+		int quantidade = sc.nextInt();
+		
+		int contador = 1;
+		int total = 0;
+		do {
+			System.out.println("Digite a nota "+ contador +":");
+			int nota = sc.nextInt();
+			total = total + nota;
+			contador = contador + 1;
+		}while (contador <= quantidade);
+		int media = total/quantidade;
+		System.out.println("Media das notas: "+ media);
+		
+		sc.close();
+    }
+}
+
