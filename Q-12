@@ -1,0 +1,28 @@
+
+import java.util.Scanner;
+class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner (System.in);
+		
+		
+		System.out.println("Digite a quantidade de numeros a serem lidos:");
+		int quantidade = sc.nextInt();
+		
+	
+		int maior = 0;
+		for (int i = 1; i <= quantidade; i+=1) {
+			System.out.println("Digite o numero " + i + ":" );
+			int valor = sc.nextInt();
+			if (valor > maior) {
+		         maior = valor;
+		
+			}
+		
+		}
+		sc.close();
+		System.out.println("Maior numero: "+ maior);
+	}
+	
+	
+}
